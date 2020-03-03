@@ -2356,22 +2356,6 @@ form p {
   padding: 0;
 }
 
-.modal__dialog--img .close {
-  margin-left: auto;
-  border-radius: 32px;
-  height: 34px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  z-index: 4;
-  right: 0;
-  top: 0;
-  margin: 15px;
-  background-color: black;
-  color: white;
-}
-
 .modal__content {
   position: relative;
   display: flex;
@@ -2413,6 +2397,18 @@ form p {
 
 .close {
   margin-left: auto;
+  border-radius: 32px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 4;
+  right: 0;
+  top: 0;
+  margin: 15px;
+  background-color: #55eb9e;
+  color: #000;
 }
 
 #bg_layer {

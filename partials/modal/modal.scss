@@ -76,22 +76,7 @@
         padding: 0;
       }
 
-      .close {
-        margin-left: auto;
-        border-radius: 32px;
-        height: 34px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        z-index: 4;
-        right: 0;
-        top: 0;
-        margin: 15px;
-        background-color: black;
-        color: white;
 
-      }
     }
 
   }
@@ -140,6 +125,19 @@
 
 .close {
   margin-left: auto;
+  border-radius: 32px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 4;
+  right: 0;
+  top: 0;
+  margin: 15px;
+  background-color: $secondary;
+  color: #000;
+
 }
 
 .modal-open {

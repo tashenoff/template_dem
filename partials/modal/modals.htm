@@ -1,0 +1,42 @@
+==
+<div id="modal" class="modal modal--fade">
+    <div class="modal__dialog">
+        <div class="modal__content">
+            <div class="block__header">
+                <h3 class="modal__title block__title">
+                    {{ record.name }}
+                </h3>
+                <div onclick="closeFunction();" class="btn close">x</div>
+            </div>
+            <div class="modal__body">
+
+                <form name="modall" onsubmit="return validateForm()" data-request="{{ genericForm }}::onFormSubmit" class="test">
+                    {{ form_token() }}
+                    <div id="{{ genericForm }}_forms_flash"></div>
+                    <input  type="hidden" name="pagename" value=" {{ record.name }}">
+                    <input type="hidden" name="price" id="input-price" value="" required>
+                    <label class="modal__field" for="fname">Ваше имя</label>
+                    <input  class="modal__field" type="text" required id="name" name="name" placeholder="Нурсултан">
+                    <label class="modal__label modal__label--left">Размер:</label>
+                    <label class="modal__label modal__label--right">количество:</label>
+                    <select class="modal__select" id="department" required name="Размер">
+                        <option value="" selected disabled>Выберете размер...</option>
+                    </select>
+
+                    <input class="modal__size" id="input-quantity" type="number" name="quantity" value="1">
+
+                    <p>Цена: <span id="department-price">0</span></p>
+                    <label class="modal__field">Номер телефона</label>
+                    <input type="text" required id="phone" name="phone" placeholder="+7 (__)___ __ __">
+                </div>
+                <div class="modal__footer">
+                    <button id="simpleContactSubmitButton" class="btn btn-primary">Отправить</button>
+
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>

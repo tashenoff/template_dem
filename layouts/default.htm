@@ -1,0 +1,110 @@
+description = "Default layout"
+==
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>1Skin care shop - {{ this.page.title }}</title>
+        <meta name="description" content="{{ this.page.meta_description }}">
+        <meta name="title" content="{{ this.page.meta_title }}">
+        <meta name="author" content="OctoberCMS">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="generator" content="OctoberCMS">
+        <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
+        <link href="{{ 'assets/css/reset.css'|theme }}" rel="stylesheet">
+        <link href="{{ 'assets/dist/css/app.css'|theme }}" rel="stylesheet">
+        {# <link href="{{ 'assets/css/grid.css'|theme }}" rel="stylesheet"> #}
+
+        {# {% styles %} #}
+    </head>
+
+    <script>
+
+        // валидация форм
+
+        function validateForm() {
+            var x = document
+                .forms["modall"]["name"]
+                .value;
+            if (x == "") {
+                alert("Name must be filled out");
+                return false;
+            }
+        }
+    </script>
+
+    <body>
+        <div id="example" class="main">
+            <div id="bg_layer"></div>
+            <!-- Header -->
+            <header id="layout-header">
+                {% partial 'dempart/navbar' %}
+            </header>
+
+            <!-- Content -->
+            <section id="layout-content">
+                {% page %}
+            </section>
+        </div>
+        <!-- Footer -->
+        <footer id="layout-footer">
+            {% partial 'dempart/footer' %}
+        </footer>
+
+        <!-- Scripts -->
+        <script src="{{ 'assets//js/libs.min.js'|theme }}"></script>
+        <script src="{{ 'assets//js/app.js'|theme }}"></script>
+        {% framework extras %}
+        {% scripts %}
+
+        <script>
+            var ProductOptions = [
+                {% if record.size %}
+                    {% for item in record.size %}
+                        {
+                            size: "{{item.size_product}}",
+                            price: "{{item.price_product}}"
+                        },
+                    {% endfor %}
+                {% endif %}
+            ];
+
+            $(document).ready(function () {
+                var SizeOptionsSelect = $("#department");
+                SizeOptionsSelect.each(function () {
+                    //По умолчанию всегда есть "шт", если массив заполнен - то select очищается и заполняется из массива
+                    if (ProductOptions.length > 0) {
+                        var SizePrice = $("#department-price"); //Строка с описанием поставки
+                        var InputPrice = $("#input-price");
+                        var CurrentPrice = 0;
+                        var CurrentQuantity = 0;
+
+                        //Заполнение из массива
+                        $.each(ProductOptions, function (index, value) {
+                            SizeOptionsSelect.append('<option>' + value.size + '</option>');
+                        });
+
+                        //Заполнение описания при выборе select
+                        SizeOptionsSelect.change(function () {
+                            var PostavkaChenge = $(this).val();
+                            $.each(ProductOptions, function (index, value) {
+                                if (PostavkaChenge == value.size) {
+                                    SizePrice.text(value.price);
+                                    InputPrice.val(value.price);
+                                    CurrentPrice = value.price;
+                                }
+                            });
+                        });
+
+                        //Изменение кол-ва
+                        $("#input-quantity").on('input', function () {
+                            CurrentQuantity = $(this).val();
+                            SizePrice.text(CurrentPrice * CurrentQuantity);
+                            InputPrice.val(CurrentPrice * CurrentQuantity);
+                        });
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

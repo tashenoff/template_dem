@@ -1,0 +1,119 @@
+.modal {
+  position: fixed;
+  top: 10%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  visibility: hidden;
+  overflow: hidden;
+  outline: 0;
+  // color: red;
+
+  &__select {
+    width: 70%;
+  }
+
+  &__label {
+    width: 70%;
+
+    &--right {
+      text-align: left;
+      width: 29%;
+    }
+  }
+
+  &__size {
+    width: 29% !important;
+  }
+
+  &__field {
+    margin: 6px 0px;
+    display: block;
+  }
+
+  &--fade {
+    opacity: 0;
+    top: 0;
+    // transition: opacity .34s linear;
+    transition: top 0.2s;
+  }
+
+  &--is-visible {
+    visibility: visible;
+    top: 10%;
+    opacity: 3;
+
+    @include mq(max, $BP-mobile) {
+      top: 0%;
+      overflow: auto;
+    }
+  }
+
+  &__dialog {
+    left: auto;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 470px;
+    margin: 1.75rem auto;
+
+    @include mq(max, $BP-mobile) {
+      max-width: 95%;
+    }
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border-radius: 0.3rem;
+    outline: 0;
+  }
+
+  &__title {
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+
+  &__body {
+    position: relative;
+
+    flex: 1 1 auto;
+    padding: 1rem;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 1rem;
+    border-top: 1px solid #e9ecef;
+
+    button {
+      max-width: 100%;
+    }
+  }
+}
+
+.modal-open {
+  // overflow: hidden;
+}
+
+#bg_layer {
+  position: fixed;
+  z-index: 3;
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  opacity: 0.5;
+  display: none;
+}
+
+#department-price {
+  float: right;
+  color: red;
+}

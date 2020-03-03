@@ -1,0 +1,134 @@
+.block {
+
+
+    &__header {
+        display: -ms-flexbox;
+        display: flex;
+
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 1rem;
+        border-bottom: 1px solid #e9ecef;
+        border-top-left-radius: 0.3rem;
+        border-top-right-radius: 0.3rem;
+    }
+
+
+    &_imge {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        margin-bottom: $gutters;
+
+        img {
+            width: 100%;
+        }
+
+    }
+
+    &__content {
+        padding: $gutters;
+        margin: 0 0 $gutters 0;
+        // box-shadow: 0px 0px 8px rgba(8, 35, 48, 0.16);
+        border: 1px solid rgba(128, 128, 128, 0.2);
+
+        border-radius: $border-radius-base;
+
+        ul {
+            padding: 0;
+            margin: 40px 18px;
+            line-height: 1.5rem;
+            // font-size: 20px;
+        }
+
+
+
+
+        &--ul-margin-none {
+
+
+            ul {
+                padding: 0;
+                margin: 0;
+                // line-height: 1.5rem;
+                // font-size: 20px;
+            }
+
+        }
+
+    }
+
+
+    &__title {
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: $gutters;
+        color: $primary;
+
+    }
+
+
+
+    &__size {
+        list-style: none;
+        display: flex;
+        font-weight: bold;
+        flex-direction: column;
+
+
+
+
+        li {
+            padding-bottom: 18px;
+
+            &:first-child {
+                padding-left: 0;
+            }
+        }
+    }
+
+    &__right {
+        p {
+            max-width: 100%;
+
+        }
+    }
+
+    &__left {
+
+        margin-top: -42px;
+        position: relative;
+        z-index: 1;
+        background-color: white;
+        border-radius: $border-radius-base;
+
+        .btn-primary {
+            max-width: 100%;
+            margin-top: 20px;
+        }
+
+
+        ul {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            margin: $gutters auto;
+            justify-content: center;
+            padding: 0 20px;
+
+        }
+
+        li {
+            margin: 0 8px;
+
+
+            img {
+                width: 100%;
+
+            }
+
+        }
+    }
+}

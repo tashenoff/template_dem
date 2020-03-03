@@ -1,0 +1,64 @@
+.about-item {
+
+    p {
+        max-width: 100%;
+    }
+
+    h2 {
+        @extend .block-steps;
+    }
+
+    display: flex;
+    margin: 0 0 50px 0;
+    align-items: center;
+
+    svg {
+        width: 100px;
+        fill: transparent;
+    }
+
+    &__title {
+        color: #fff;
+        text-align: center;
+
+    }
+
+    &__label {
+        font-size: 18px;
+        padding: 5px 0;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+
+
+    }
+
+    @media screen and (max-width: 600px) {
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+    }
+
+
+    &__wrapper {
+        background-image: url("https://skincareshop.netlify.com/img/about_bg.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: $primary;
+
+        h1 {
+            color: #fff;
+        }
+
+        p {
+            margin: 0;
+        }
+    }
+
+    &__desc {
+        padding: 0 18px;
+        color: #fff;
+        line-height: $base-font-size*1.5;
+    }
+
+
+}

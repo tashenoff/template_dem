@@ -1,0 +1,103 @@
+title = "catalog-simple"
+url = "/catalog-simple/:id"
+layout = "default"
+is_hidden = 0
+
+[builderDetails]
+modelClass = "Alex\Landingcat\Models\Catalog"
+identifierValue = "{{ :id }}"
+modelKeyColumn = "id"
+displayColumn = "full_desc"
+notFoundMessage = "Record not found"
+
+[genericForm]
+rules[name] = "required"
+rules[Размер] = "required"
+rules[phone] = "required"
+messages_success = "Your form was successfully submitted"
+messages_errors = "There were errors with your submission"
+messages_partial = "flash/flash.htm"
+reset_form = 0
+inline_errors = "disabled"
+js_on_success = "alert('ok');"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+==
+{% set record = builderDetails.record %}
+{% set displayColumn = builderDetails.displayColumn %}
+{% set notFoundMessage = builderDetails.notFoundMessage %}
+
+{% if record %}
+
+    <div id="space-navbar-fixed" class="banner banner--product banner--anima">
+        <div class="container">
+            <div class="row">
+                <div class="banner__wrapper">
+                    <div class="banner__content">
+                        <h1 class="border__title border__title--white">
+                            {{ record.name }}</h1>
+                        <p>{{ record.short_desc }}</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col col-4">
+                <div class="block__left">
+                    <div class="block_imge">
+                        <img src="{{ record.img.thumb(293, 293, {'mode':'auto'}) }}" alt="" srcset=""></div>
+                    <ul>
+
+                        {% for image in record.gall %}
+                            <li>
+                                <a href="{{ image.path }}">
+                                    <img id="cardImg" src="{{ image.thumb(115, 115, {'mode':'crop'}) }}" alt="" srcset=""></li>
+                            </a>
+                            {%endfor%}
+
+                        </ul>
+                        <div  onclick="openFunction();" class="btn btn-primary">Заказать</div>
+
+                    </div>
+                </div>
+                <div class="col col-8">
+                    <div class="block__right">
+                        <div class="block__content block__content--no-shadow block__content--ul-margin-none">
+                            <p class="block__title">Размер</p>
+                            <ul class="block__size">
+                                {% for size in record.size %}
+                                    <li>{{size.size_product }}&nbsp;Цена: {{size.price_product }}</li>
+
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% for full_desc in record.full_desc %}
+                            <div class="block__content">
+
+                                <p>{{ full_desc.desc_r | raw }}</p>
+
+                            </div>
+                        {% endfor %}
+
+                        <div  onclick="openFunction();" class="btn btn-primary display-mob">Заказать</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        {% partial 'modal/modals' %}
+
+    {% else %}
+        {{ notFoundMessage }}
+    {% endif %}

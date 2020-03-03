@@ -1,0 +1,51 @@
+footer {
+  background-color: $primary;
+  color: #fff;
+  flex: 0 0 auto;
+
+  svg {
+
+    width: 150px;
+
+
+
+    @media screen and (max-width: 600px) {
+      width: 140px;
+
+
+    }
+  }
+
+
+
+}
+
+.footer {
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__bottom {
+    background-color: darken($primary, 10%);
+
+    // border-top: 1px solid darken($primary, 10%);
+  }
+
+  &__left {}
+
+  &__right {
+
+    display: flex;
+    align-items: center;
+
+    svg {
+      fill: white;
+      width: 30px;
+      margin: 0 0 0 16px;
+    }
+  }
+
+}

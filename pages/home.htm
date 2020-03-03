@@ -1,0 +1,64 @@
+title = "Demonstration"
+url = "/"
+layout = "default"
+is_hidden = 0
+
+[builderList]
+modelClass = "Alex\Landingcat\Models\Landing"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "label"
+noRecordsMessage = "No records found"
+detailsPage = "landing"
+detailsKeyColumn = "id"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+==
+<div id="space-navbar-fixed"class="banner banner--home">
+    <div class="container">
+        <div class="row">
+            {% content "header.htm" %}
+        </div>
+    </div>
+</div>
+<section id="start" class="body-catalog">
+    <div class="container">
+        <div class="row">
+            {% partial 'dempart/home-cat' %}
+        </div>
+    </div>
+</section>
+
+<section class="block-steps">
+    <div class="container">
+        <div class="row">
+            {% content "steps.htm" %}
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="row">
+        <div class="wrapper">
+            {% content "expert.htm" %}
+        </div>
+    </div>
+</div>
+
+<section class="about-item__wrapper">
+    <div class="container">
+        <div class="content-block">
+            <div class="row">
+                {% content "aboutlist.htm" %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="banner banner--bottom">
+    <div class="container">
+        <div class="row">
+            {% content "marketing.htm" %}
+        </div>
+    </div>
+</div>

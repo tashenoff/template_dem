@@ -1,0 +1,25 @@
+.form {
+  &__error {
+    color: red !important;
+  }
+
+  &__correct {
+    color: green !important;
+  }
+  &__wrapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: all 2s;
+
+    p {
+      margin-top: 16px;
+      @extend .block__title;
+    }
+
+    img {
+      width: 60px;
+    }
+  }
+}

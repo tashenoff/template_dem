@@ -1,0 +1,11 @@
+.title {
+    padding: 48px 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    @include mq(max $BP-mobile) {
+        line-height: $base-line-height*1.5;
+    }
+
+}

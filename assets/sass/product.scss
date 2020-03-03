@@ -1,0 +1,8 @@
+.display-mob {
+    display: none;
+
+    @include mq(max $BP-mobile) {
+        max-width: 100%;
+        display: block
+    }
+}

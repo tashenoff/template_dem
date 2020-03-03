@@ -1,0 +1,61 @@
+title = "catalog"
+url = "/catalog"
+layout = "default"
+is_hidden = 0
+
+[builderList]
+modelClass = "Alex\Landingcat\Models\Catalog"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "name"
+noRecordsMessage = "No records found"
+detailsPage = "catalog-simple"
+detailsKeyColumn = "id"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+==
+{% set records = builderList.records %}
+{% set displayColumn = builderList.displayColumn %}
+{% set noRecordsMessage = builderList.noRecordsMessage %}
+{% set detailsPage = builderList.detailsPage %}
+{% set detailsKeyColumn = builderList.detailsKeyColumn %}
+{% set detailsUrlParameter = builderList.detailsUrlParameter %}
+
+<div id="space-navbar-fixed" class="banner banner--cat banner--anima">
+    <div class="container">
+        <div class="row">
+            <div class="banner__wrapper">
+                <div class="banner__content">
+                    <h1 class="border__title border__title--white">Каталог</h1>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        {% for record in records %}
+            <div class="col col-3">
+
+                <div class="product-item">
+
+                    <div class="product-item__body">
+                        <p class="block__title product-item__title">
+                            <a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">
+                                {{ record.name }}</a>
+                        </p>
+                        <div class="product-item__image">
+                            <img src="{{ record.img.thumb(600, 600, {'mode':'crop'}) }}" alt="" srcset=""></div>
+                        <div class="product-item__action">
+                            <a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">подробнее</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        {% endfor %}
+    </div>
+</div>

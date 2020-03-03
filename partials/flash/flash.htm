@@ -1,0 +1,14 @@
+{% if type == 'success' %}
+
+    <div class="form form__wrapp">
+        <img src="{{ 'assets/img/correct.svg'|theme }}" alt="">
+        <p class="form__correct">{{ this.theme.modal_correct }}</p>
+
+    </div>
+{% else %}
+
+    <div class="form form__wrapp">
+        <img src="{{ 'assets/img/correct.svg'|theme }}" alt="">
+        <p class="form__error">{{ this.theme.modal_error }}</p>
+    </div>
+{% endif %}

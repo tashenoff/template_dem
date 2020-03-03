@@ -1,0 +1,6 @@
+name: dem
+description: "this theme create by alex"
+author: alex
+homepage: "www.avoqado.kz"
+code: ""
+form: config/fields.yaml

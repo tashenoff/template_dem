@@ -1,0 +1,160 @@
+.block-steps {
+  background-image: url("https://skincareshop.netlify.com/img/bg-two.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 50px;
+  background-color: $primary;
+
+  h2 {
+    color: #fff;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 600px) {
+    padding: 0px;
+  }
+
+  &__title {
+    @extend .about-item__title;
+  }
+}
+
+.item-steps__number:last-child {
+  color: red;
+}
+
+.steps-column {
+  width: 100%;
+  width: calc(25% - 30px);
+  margin: 15px;
+
+  &:last-child {
+    .item-steps__number {
+      &::after,
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    width: calc(50% - 16px);
+    margin: 8px;
+  }
+}
+
+.item-steps__number:last-child::after {
+  content: "";
+  border: 100px solid black;
+}
+
+.item-steps {
+  color: #fff;
+  text-align: center;
+
+  flex-direction: column;
+
+  &__number {
+    background-color: $primary;
+    border-radius: 50%;
+    width: 95px;
+    height: 95px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-family: $font-heading;
+    color: #fff;
+    border: 5px solid white;
+    margin: 0 auto;
+    position: relative;
+
+    &::before {
+      content: "";
+      display: block;
+      border: 2px solid #fff;
+      width: 200px;
+      position: absolute;
+      left: 101%;
+
+      @include mq(max $BP-mobile) {
+        display: none;
+      }
+    }
+
+    // &::after {
+    //   content: "";
+    //   display: block;
+    //   border: radius 50%;
+    //   width: 20px;
+    //   height: 20px;
+    //   background-color: #fff;
+
+    //   position: absolute;
+    //   margin-left: calc(100% - 10px);
+    // }
+
+    &:last-child::after {
+      display: none;
+    }
+  }
+
+  &__caption {
+    margin-top: 16px;
+
+    @extend .about-item__title;
+  }
+
+  &__desc {
+    margin-top: 16px;
+    padding: 0px !important;
+    @extend .about-item__desc;
+  }
+}
+
+// .block-steps-number {
+//   display: inline-block;
+//   background: $secondary;
+//   color: #fff;
+//   text-align: center;
+//   font-size: $h1-font-size;
+//   font-family: $font-heading;
+//   border-radius: 50%;
+//   border: 11px solid #fff;
+//   padding: 30px;
+//   width: 50px;
+//   height: 50px;
+// }
+
+// .block-steps-item {
+//   display: flex;
+//   align-items: center;
+//   flex-direction: column;
+//   justify-content: center;
+//   position: relative;
+// }
+
+// .block-steps-number::after {
+//   content: "";
+//   border-radius: 50px;
+//   background-color: #fff;
+//   top: 25%;
+//   height: 20px;
+//   width: 20px;
+//   left: 100%;
+//   bottom: 0;
+//   position: absolute;
+// }
+
+// .block-steps-desc {
+//   margin-top: 10px;
+//   color: #fff;
+//   text-transform: uppercase;
+//   text-align: center;
+// }
+
+// .block-steps-caption {
+//   color: #fff;
+//   margin-top: 8px;
+// }

@@ -3,6 +3,9 @@ $(function() {
 });
 
 var menu = document.getElementById("navbar");
+var modalImg = document.getElementById("modal-img");
+// var img = document.querySelector("myImg");
+var imgcont = document.getElementById("img01");
 var close = document.getElementById("close");
 var open = document.getElementById("modal-open");
 var shadow = document.getElementById("example");
@@ -64,6 +67,10 @@ function closeFunction() {
   modal.classList.remove("modal--is-visible");
   document.body.classList.remove("modal-open");
   document.getElementById("bg_layer").removeAttribute("style");
+  modalImg.classList.remove("modal--is-visible");
+
+
+  
 }
 
 bgLayer.onclick = function() {
@@ -72,11 +79,30 @@ bgLayer.onclick = function() {
   document.getElementById("bg_layer").removeAttribute("style");
 };
 
-function ValidateFunction() {
-  var x = document.forms["modall"]["fname"].value;
-  if (x == "") {
-    x.add("modal-open");
-    alert("Name must be filled out");
-    return false;
-  }
-}
+//img modal
+
+// img.onclick = function() {
+//   modalImg.classList.add("modal--is-visible");
+//   document.body.classList.add("modal-open");
+//   document.getElementById("bg_layer").style.display = "block";
+//   imgcont.src = this.dataset.src;
+// };
+
+document.querySelectorAll(".myImg").forEach(img => {
+  img.addEventListener("click", () => {
+    modalImg.classList.add("modal--is-visible");
+
+    document.body.classList.add("modal-open");
+    document.getElementById("bg_layer").style.display = "block";
+    document.querySelector("#img01").setAttribute("src", img.dataset.src);
+  });
+});
+
+// function ValidateFunction() {
+//   var x = document.forms["modall"]["fname"].value;
+//   if (x == "") {
+//     x.add("modal-open");
+//     alert("Name must be filled out");
+//     return false;
+//   }
+// }

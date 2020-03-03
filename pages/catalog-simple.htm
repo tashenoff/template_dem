@@ -83,6 +83,9 @@ recaptcha_size = "normal"
                         </div>
                         {% for full_desc in record.full_desc %}
                             <div class="block__content">
+                                <p class="block__title">
+                                    {{ full_desc.desc_title }}
+                                </p>
 
                                 <p>{{ full_desc.desc_r | raw }}</p>
 

@@ -68,9 +68,6 @@ function closeFunction() {
   document.body.classList.remove("modal-open");
   document.getElementById("bg_layer").removeAttribute("style");
   modalImg.classList.remove("modal--is-visible");
-
-
-  
 }
 
 bgLayer.onclick = function() {
@@ -88,15 +85,15 @@ bgLayer.onclick = function() {
 //   imgcont.src = this.dataset.src;
 // };
 
-document.querySelectorAll(".myImg").forEach(img => {
-  img.addEventListener("click", () => {
-    modalImg.classList.add("modal--is-visible");
+// document.querySelectorAll(".myImg").forEach(img => {
+//   img.addEventListener("click", () => {
+//     modalImg.classList.add("modal--is-visible");
 
-    document.body.classList.add("modal-open");
-    document.getElementById("bg_layer").style.display = "block";
-    document.querySelector("#img01").setAttribute("src", img.dataset.src);
-  });
-});
+//     document.body.classList.add("modal-open");
+//     document.getElementById("bg_layer").style.display = "block";
+//     document.querySelector("#img01").setAttribute("src", img.dataset.src);
+//   });
+// });
 
 // function ValidateFunction() {
 //   var x = document.forms["modall"]["fname"].value;

@@ -55,13 +55,15 @@ recaptcha_size = "normal"
             <div class="col col-4">
                 <div class="block__left">
                     <div class="block_imge">
-                        <img data-src="{{ record.img.path }}" class="myImg" src="{{ record.img.thumb(293, 293, {'mode':'auto'}) }}" alt="" srcset=""></div>
+                        <a data-fancybox="gallery" href="{{ record.img.path }}">
+                            <img data-src="{{ record.img.path }}" class="myImg" src="{{ record.img.thumb(293, 293, {'mode':'auto'}) }}" alt="" srcset=""></a>
+                    </div>
                     <ul>
 
                         {% for image in record.gall %}
                             <li>
                                 {# <a href="{{ image.path }}"> #}
-                                <img  data-src="{{ image.path }}" class="myImg" src="{{ image.thumb(115, 115, {'mode':'crop'}) }}" alt="" srcset="">
+                                <a data-fancybox="gallery" href="{{ image.path }}"><img  data-src="{{ image.path }}" class="myImg" src="{{ image.thumb(115, 115, {'mode':'crop'}) }}" alt="" srcset=""></a>
                                 {# </a> #}
                             </li>
 

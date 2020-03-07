@@ -13,6 +13,7 @@ description = "Default layout"
         <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
         <link href="{{ 'assets/css/reset.css'|theme }}" rel="stylesheet">
         <link href="{{ 'assets/dist/css/app.css'|theme }}" rel="stylesheet">
+        <link href="{{ 'assets/dist/css/jquery.fancybox.min.css'|theme }}" rel="stylesheet">
         {# <link href="{{ 'assets/css/grid.css'|theme }}" rel="stylesheet"> #}
 
         {# {% styles %} #}
@@ -54,6 +55,7 @@ description = "Default layout"
         <!-- Scripts -->
         <script src="{{ 'assets//js/libs.min.js'|theme }}"></script>
         <script src="{{ 'assets//js/app.js'|theme }}"></script>
+        <script src="{{ 'assets//js/jquery.fancybox.min.js'|theme }}"></script>
         {% framework extras %}
         {% scripts %}
 
@@ -70,6 +72,24 @@ description = "Default layout"
             ];
 
             $(document).ready(function () {
+
+                $('.minus').click(function () {
+                    var $input = $("#input-quantity");
+                    var count = parseInt($input.val()) - 1;
+                    count = count < 1
+                        ? 1
+                        : count;
+                    $input.val(count);
+                    $input.change();
+                    return false;
+                });
+                $('.plus').click(function () {
+                    var $input = $("#input-quantity");
+                    $input.val(parseInt($input.val()) + 1);
+                    $input.change();
+                    return false;
+                });
+
                 var SizeOptionsSelect = $("#department");
                 SizeOptionsSelect.each(function () {
                     //По умолчанию всегда есть "шт", если массив заполнен - то select очищается и заполняется из массива

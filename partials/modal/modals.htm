@@ -14,6 +14,9 @@
                     {{ form_token() }}
                     <div id="{{ genericForm }}_forms_flash"></div>
                     <input  type="hidden" name="pagename" value=" {{ record.name }}">
+
+                    <img src="{{ record.img.thumb(600, 600, {‘mode’:’auto’}) }}" alt="" srcset="">
+
                     <input type="hidden" name="price" id="input-price" value="" required>
                     <label class="modal__field" for="fname">Ваше имя</label>
                     <input  class="modal__field" type="text" required id="name" name="name" placeholder="Нурсултан">
@@ -22,8 +25,9 @@
                     <select class="modal__select" id="department" required name="Размер">
                         <option value="" selected disabled>Выберете размер...</option>
                     </select>
-
+                    <button class="minus">-</button>
                     <input class="modal__size" id="input-quantity" type="number" name="quantity" value="1">
+                    <button class="plus">+</button>
 
                     <p>Цена: <span id="department-price">0</span></p>
                     <label class="modal__field">Номер телефона</label>

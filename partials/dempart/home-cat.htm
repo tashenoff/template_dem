@@ -6,25 +6,38 @@
 {% set detailsKeyColumn = builderList.detailsKeyColumn %}
 {% set detailsUrlParameter = builderList.detailsUrlParameter %}
 
-
-
 <div class="col col-12">
     <h2 class="title">Наш ассортимент:</h2>
 </div>
 
-
-
-
- {% for record in records %}
-<div class="col col-4">
-    <a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">
-        <div class="body-catalog__item">
-            <div class="body-catalog__foto">
-                <img src="{{ record.img.thumb(600, 600, {‘mode’:’auto’}) }}" alt="" srcset=""></div>
-            <div class="body-catalog__title">   {{ record.label }}</div>
-        </div>
+{% for record in records %}
+    <div class="col col-4">
+        <a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">
+            <div class="cards">
+                <figure class="card card__home">
+                    <img src="{{ record.img.thumb(600, 600, {‘mode’:’auto’}) }}" alt="" srcset="">
+                    <div class="body-catalog__title">
+                        {{ record.label }}
+                    </div>
+                </figure>
+            </div>
         </a>
-    
-</div>
 
- {% endfor %}
+    </div>
+
+{% endfor %}
+
+{# {% for record in records %}
+    <div class="col col-4">
+        <a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">
+            <div class="body-catalog__item">
+                <div class="body-catalog__foto">
+                    <img src="{{ record.img.thumb(600, 600, {‘mode’:’auto’}) }}" alt="" srcset=""></div>
+                <div class="body-catalog__title">
+                    {{ record.label }}</div>
+            </div>
+        </a>
+
+    </div>
+
+{% endfor %} #}

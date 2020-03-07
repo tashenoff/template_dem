@@ -2353,20 +2353,12 @@ form p {
   width: 24px;
 }
 
-.modal {
-  position: fixed;
-  top: 10%;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1050;
-  visibility: hidden;
-  overflow: hidden;
-  outline: 0;
-}
-
 .modal__select {
   width: 70%;
+}
+
+.modal__quantity {
+  display: flex;
 }
 
 .modal__label {

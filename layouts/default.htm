@@ -73,23 +73,6 @@ description = "Default layout"
 
             $(document).ready(function () {
 
-                $('.minus').click(function () {
-                    var $input = $("#input-quantity");
-                    var count = parseInt($input.val()) - 1;
-                    count = count < 1
-                        ? 1
-                        : count;
-                    $input.val(count);
-                    $input.change();
-                    return false;
-                });
-                $('.plus').click(function () {
-                    var $input = $("#input-quantity");
-                    $input.val(parseInt($input.val()) + 1);
-                    $input.change();
-                    return false;
-                });
-
                 var SizeOptionsSelect = $("#department");
                 SizeOptionsSelect.each(function () {
                     //По умолчанию всегда есть "шт", если массив заполнен - то select очищается и заполняется из массива
@@ -122,6 +105,36 @@ description = "Default layout"
                             SizePrice.text(CurrentPrice * CurrentQuantity);
                             InputPrice.val(CurrentPrice * CurrentQuantity);
                         });
+
+                        //кнопки плюс, минус
+                        $('.minus').click(function () {
+                            var $input = $("#input-quantity");
+                            var count = parseInt($input.val()) - 1;
+                            count = count < 1
+                                ? 1
+                                : count;
+                            $input.val(count);
+                            $input.change();
+
+                            CurrentQuantity = $input.val();
+                            SizePrice.text(CurrentPrice * CurrentQuantity);
+                            InputPrice.val(CurrentPrice * CurrentQuantity);
+
+                            return false;
+                        });
+
+                        $('.plus').click(function () {
+                            var $input = $("#input-quantity");
+                            $input.val(parseInt($input.val()) + 1);
+                            $input.change();
+
+                            CurrentQuantity = $input.val();
+                            SizePrice.text(CurrentPrice * CurrentQuantity);
+                            InputPrice.val(CurrentPrice * CurrentQuantity);
+
+                            return false;
+                        });
+
                     }
                 });
             });

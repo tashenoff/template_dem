@@ -55,7 +55,7 @@ recaptcha_size = "normal"
             <div class="col col-4">
                 <div class="block__left">
                     <div class="block_imge">
-                        <a data-fancybox="gallery" href="{{ record.img.path }}">
+                        <a style="width: 100%;" data-fancybox="gallery" href="{{ record.img.path }}">
                             <img data-src="{{ record.img.path }}" class="myImg" src="{{ record.img.thumb(293, 293, {'mode':'auto'}) }}" alt="" srcset=""></a>
                     </div>
                     <ul>
@@ -70,7 +70,7 @@ recaptcha_size = "normal"
                             {%endfor%}
 
                         </ul>
-                        <div  onclick="openFunction();" class="btn btn-primary">Заказать</div>
+                        <div data-fancybox="modal" data-src="#modals" href="javascript:;" class="btn btn-primary">Заказать</div>
 
                     </div>
                 </div>

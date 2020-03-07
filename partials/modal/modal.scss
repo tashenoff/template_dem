@@ -1,17 +1,21 @@
 .modal {
-  position: fixed;
-  top: 10%;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1050;
-  visibility: hidden;
-  overflow: hidden;
-  outline: 0;
+  // position: fixed;
+// top: 10%;
+// right: 0;
+// bottom: 0;
+// left: 0;
+// z-index: 1050;
+// visibility: hidden;
+// overflow: hidden;
+// outline: 0;
   // color: red;
 
   &__select {
     width: 70%;
+  }
+
+  &__quantity {
+    display: flex;
   }
 
   &__label {

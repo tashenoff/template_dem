@@ -1,3 +1,139 @@
+*:focus {
+    outline: none !important
+}
+
+.expert {
+    flex-wrap: wrap;
+
+    &__wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        position: relative;
+
+
+    }
+
+    &__body {
+        display: flex;
+        width: 85%;
+
+
+
+        @include mq(max $BP-mobile) {
+            flex-direction: column;
+            width: 100%;
+
+
+
+        }
+
+
+    }
+
+    &__right {
+
+
+
+        @include mq(max $BP-mobile) {
+            width: 100%;
+            display: flex;
+            flex-direction: column-reverse;
+
+
+
+        }
+    }
+
+    &__foto {
+        min-width: 260px;
+        display: block;
+        padding: $gutters;
+
+        @include mq(max $BP-mobile) {
+            width: 100%;
+
+
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+    }
+
+    &__text {
+        padding: $gutters;
+        width: 100% !important;
+
+    }
+
+    &__footer {
+        padding: $gutters;
+
+        // border-top: 1px solid black;
+        @include mq(max $BP-mobile) {
+            width: 100%;
+
+            &:nth-child(1) {
+                order: -1;
+            }
+
+        }
+    }
+
+    &__name {
+        font-weight: bold;
+        margin: 16px 0 16px;
+    }
+}
+
+
+
+.owl-prev {
+    width: 15px;
+    height: 100px;
+    position: absolute;
+    top: calc(50% - 50px);
+    display: block !important;
+    border: 0px solid black;
+
+
+    @include mq(max $BP-mobile) {
+        bottom: 10%;
+
+    }
+}
+
+
+.owl-next {
+    width: 15px;
+    height: 100px;
+    position: absolute;
+    top: calc(50% - 50px);
+    right: 52px;
+    display: block !important;
+    border: 0px solid black;
+}
+
+
+.owl-theme .owl-nav [class*=owl-]:hover {
+    background-color: transparent !important;
+    display: block !important;
+}
+
+
+.owl-theme .owl-nav [class*=owl-]:active {
+    outline: none !important;
+    border: none !important;
+
+    svg {
+        outline: none !important;
+        border: none !important;
+    }
+}
+
+
 .border {
 
 

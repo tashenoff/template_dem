@@ -7,7 +7,7 @@
   }
 
   p {
-    max-width: 80%;
+    max-width: 100%;
 
     @include mq(max $BP-mobile) {
       max-width: 100%;

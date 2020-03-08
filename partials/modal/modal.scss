@@ -1,22 +1,70 @@
 .modal {
   // position: fixed;
-// top: 10%;
-// right: 0;
-// bottom: 0;
-// left: 0;
-// z-index: 1050;
-// visibility: hidden;
-// overflow: hidden;
-// outline: 0;
+  // top: 10%;
+  // right: 0;
+  // bottom: 0;
+  // left: 0;
+  // z-index: 1050;
+  // visibility: hidden;
+  // overflow: hidden;
+  // outline: 0;
   // color: red;
 
+  &__price {
+    background-color: #F0F6FD;
+    padding: 20px;
+    font-weight: bold;
+  }
+
   &__select {
-    width: 70%;
+    width: 100%;
+  }
+
+  .quantity {
+    &__wrapp {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
   }
 
   &__quantity {
     display: flex;
+    justify-content: space-between;
+
+    p {
+      text-align: center;
+      padding: 0;
+      margin: 0;
+      font-size: 14px;
+    }
+
+    input {
+      text-align: center;
+      height: 100%;
+      font-size: 18px;
+      border: transparent;
+
+    }
+
+    button {
+      padding: 0;
+      margin: 0;
+      max-width: 82px;
+      padding: 20px;
+      background-color: #F0F6FD;
+      transition: all 0.5s;
+
+      &:hover {
+        background-color: #6BA6EA;
+        color: #fff;
+      }
+
+
+    }
   }
+
+
 
   &__label {
     width: 70%;
@@ -39,6 +87,7 @@
   &--fade {
     opacity: 0;
     top: 0;
+    display: none;
     // transition: opacity .34s linear;
     transition: top 0.2s;
   }
@@ -161,4 +210,8 @@
 #department-price {
   float: right;
   color: red;
+
+  &:after {
+    content: "₸";
+  }
 }

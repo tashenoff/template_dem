@@ -1,45 +1,57 @@
 ==
 
-
-                <form  id="modals" name="modall" onsubmit="return validateForm()" data-request="{{ genericForm }}::onFormSubmit" class="modal">
-    {{ form_token() }}
-    <div id="{{ genericForm }}_forms_flash"></div>
-    <input  type="hidden" name="pagename" value=" {{ record.name }}">
-
-    <input type="hidden" name="price" id="input-price" value="" required>
-    <label class="modal__field" for="fname">Ваше имя</label>
-    <input  class="modal__field" type="text" required id="name" name="name" placeholder="Нурсултан">
-    <label class="modal__label">Размер:</label>
-
-    <select class="modal__select" id="department" required name="Размер">
-        <option value="" selected disabled>Выберете размер...</option>
-    </select>
-    <div class="modal__quantity">
-        <button class="minus">-</button>
-        <input class="modal__size" id="input-quantity" type="number" name="quantity" value="1">
-        <button class="plus">+</button>
-    </div>
-    <p>Цена: <span id="department-price">0</span></p>
-    <label class="modal__field">Номер телефона</label>
-    <input type="text" required id="phone" name="phone" placeholder="+7 (__)___ __ __">
-
-    <div class="modal__footer">
-        <button id="simpleContactSubmitButton" class="btn btn-primary">Отправить</button>
-
-    </div>
-
-</form>
+<script>
+    $(".modal").fancybox({
+        afterClose: function () {
+            location.reload();
+            return;
+        }
+    });
+</script>
 
 <div id="modal-img" class="modal modal--fade">
-    <div class="modal__dialog modal__dialog--img">
-        <div class="modal__content">
-            <div class="block__header">
-                <div onclick="closeFunction();" class="btn close">x</div>
-            </div>
-            <div class="modal__body">
+    <form  id="modals" name="modall" onsubmit="return validateForm()" data-request="{{ genericForm }}::onFormSubmit" class="modal">
+        {{ form_token() }}
+        <div id="{{ genericForm }}_forms_flash"></div>
+        <input  type="hidden" name="pagename" value=" {{ record.name }}">
 
-                <img class="modal-content" id="img01">
+        <input type="hidden" name="price" id="input-price" value="" required>
+        <label class="modal__field" for="fname">Ваше имя</label>
+        <input  class="modal__field" type="text" required id="name" name="name" placeholder="Нурсултан">
+        <label class="modal__label">Размер:</label>
+
+        <select class="modal__select" id="department" required name="Размер">
+            <option value="" selected disabled>Выберете размер...</option>
+        </select>
+        <div class="modal__quantity">
+            <button class="minus">-</button>
+            <div class="quantity__wrapp">
+                <p>Количество:</p>
+                <input class="modal__size" id="input-quantity" type="number" name="quantity" value="1">
             </div>
+            <button class="plus">+</button>
         </div>
 
-    </div>
+        <label class="modal__field">Номер телефона</label>
+        <input type="text" required id="phone" name="phone" placeholder="+7 (__)___ __ __">
+        <p class="modal__price">Итоговая цена: <span id="department-price">0</span></p>
+        <div class="modal__footer">
+            <button id="simpleContactSubmitButton" class="btn btn-primary">Отправить</button>
+
+        </div>
+
+    </form>
+
+    <div id="modal-img" class="modal modal--fade">
+        <div class="modal__dialog modal__dialog--img">
+            <div class="modal__content">
+                <div class="block__header">
+                    <div onclick="closeFunction();" class="btn close">x</div>
+                </div>
+                <div class="modal__body">
+
+                    <img class="modal-content" id="img01">
+                </div>
+            </div>
+
+        </div>

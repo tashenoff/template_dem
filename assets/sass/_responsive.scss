@@ -45,6 +45,39 @@
   }
 }
 
+
+
+.col-2 {
+  // width: calc(50% - #{$gutters*2});
+  width: 40%;
+  border: 1px solid rgba(128, 128, 128, 0.11);
+
+  border-right: 0;
+
+
+
+
+
+  @include mq(max $BP-mobile) {
+    width: 50%;
+  }
+}
+
+
+
+.col-10 {
+  // width: calc(50% - #{$gutters*2});
+  width: 60%;
+  border: 1px solid rgba(128, 128, 128, 0.11);
+
+
+
+
+  @include mq(max $BP-mobile) {
+    width: 50%;
+  }
+}
+
 .col-8 {
   width: 66.667%;
 

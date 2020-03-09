@@ -1,0 +1,32 @@
+<div class="expert">
+    <h2 class="title border__title">Ориентируемся на мнение экспертов</h2>
+    <p>1000+ врачей по всему миру пользуются продукцией Mölnlycke Health Care(Швеция) и подтверждают безопасность, качество и превосходство современных перевязочных материалов над традиционными аналогами.</p>
+
+    <div class="owl-carousel owl-theme">
+        {%for record in builderList2.records%}
+            <div class="item">
+
+                <div class="expert__wrapper">
+                    <div class="expert__body">
+                        <div class="expert__foto"><img src="{{ record.photo.thumb(263, 380, {'mode':'crop'}) }}" alt=""></div>
+                        <div class="expert__right">
+
+                            <div class="expert__text">{{ record.says | raw }}</div>
+                            <div class="expert__footer">
+                                <hr>
+                                <div class="expert__name">{{ record.name }}</div>
+                                {{ record.prof }}</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        {% endfor %}
+
+    </div>
+
+</div>
+</div>
+
+</div>
+</div>

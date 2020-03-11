@@ -49,26 +49,26 @@ notFoundMessage = "Record not found"
 </div>
 
 <div class="container">
-    <div class="row">
 
-        {% for landpro in record.landpro %}
+    {% for landpro in record.landpro %}
+        <div class="row">
+            <div class="land">
+                <div class="col col-4">
+                    <img src="{{ landpro.imgpro |media|resize(350, 350) }}" alt="">
+                </div>
+                <div class="col col-8">
+                    <div class="land__product">
+                        <p class="block__title">
+                            {{landpro.head }}</p>
+                        {{landpro.descpro |raw }}
+                        <div class="land__footer">
+                            <a class="btn btn-primary" href="{{landpro.linkpro }}">Подробнее</a>
+                        </div>
 
-            <div class="col col-4">
-                <img src="{{ landpro.imgpro |media|resize(350, 350) }}" alt="">
-            </div>
-            <div class="col col-8">
-                <div class="land__product">
-                    <p class="block__title">
-                        {{landpro.head }}</p>
-                    {{landpro.descpro |raw }}
-                    <div class="land__footer">
-                        <a class="btn btn-primary" href="{{landpro.linkpro }}">Подробнее</a>
                     </div>
-
                 </div>
             </div>
+        </div>
+    {% endfor %}
 
-        {% endfor %}
-
-    </div>
 </div>

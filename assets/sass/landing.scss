@@ -1,9 +1,21 @@
 .land {
+    display: flex;
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    margin: $gutters;
+    width: 100%;
+
+    @include mq(max $BP-mobile) {
+        flex-direction: column;
+    }
+
+
+
     &__product {
         display: flex;
         flex-direction: column;
         height: 100%;
         justify-content: space-between;
+
 
     }
 

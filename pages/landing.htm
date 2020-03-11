@@ -14,37 +14,61 @@ notFoundMessage = "Record not found"
 {% set displayColumn = builderDetails.displayColumn %}
 {% set notFoundMessage = builderDetails.notFoundMessage %}
 
- <div id="space-navbar-fixed" class="banner banner--landing banner--anima">
-                <div class="container">
-                    <div class="row">
-                        <div class="banner__wrapper">
-                            <div class="banner__content">
-                                <h1 class="border__title border__title--white">{{ record.label }}</h1>
-                                <p>{{ record.short_desc }}</p>
+<div id="space-navbar-fixed" class="banner banner--landing banner--anima">
+    <div class="container">
+        <div class="row">
+            <div class="banner__wrapper">
+                <div class="banner__content">
+                    <h1 class="border__title border__title--white">{{ record.label }}</h1>
+                    <p>{{ record.short_desc }}</p>
 
-                            </div>
+                </div>
 
-                            <button onclick="openFunction();" class="btn btn-outline"> бесплатная консультация специалиста</button>
+                <button onclick="openFunction();" class="btn btn-outline"> бесплатная консультация специалиста</button>
 
-                        </div>
+            </div>
 
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="wrapper">
+            <div class="block__content block__content--no-shadow">
+                {% if record %}
+                    {{ record.text | raw }}
+
+                {% else %}
+                    {{ notFoundMessage }}
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+
+        {% for landpro in record.landpro %}
+
+            <div class="col col-4">
+                <img src="{{ landpro.imgpro |media|resize(350, 350) }}" alt="">
+            </div>
+            <div class="col col-8">
+                <div class="land__product">
+                    <p class="block__title">
+                        {{landpro.head }}</p>
+                    {{landpro.descpro |raw }}
+                    <div class="land__footer">
+                        <a class="btn btn-primary" href="{{landpro.linkpro }}">Подробнее</a>
                     </div>
+
                 </div>
             </div>
 
+        {% endfor %}
 
-      <div class="container">
-                    <div class="row">
-                        <div class="wrapper">
-                            <div class="block__content block__content--no-shadow">
-{% if record %}
-    {{ record.text | raw }}
-
-{% else %}
-    {{ notFoundMessage }}
-{% endif %}
-
-</div>
-</div>
-</div>
+    </div>
 </div>

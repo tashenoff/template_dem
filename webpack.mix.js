@@ -11,7 +11,8 @@ let mix = require("laravel-mix");
  |
  */
 mix.setPublicPath("./assets/");
-mix.sass("./assets/sass/app.scss", "dist/css");
+mix.sass("./assets/sass/app.scss", "dist/css").version();
+
 mix.browserSync({
   proxy: "localhost/dem",
   //   notify: false,

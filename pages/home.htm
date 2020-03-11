@@ -13,7 +13,25 @@ detailsPage = "landing"
 detailsKeyColumn = "id"
 detailsUrlParameter = "id"
 pageNumber = "{{ :page }}"
+
+[builderList builderList2]
+modelClass = "Alex\Landingcat\Models\Expert"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "name"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
 ==
+{% set test = builderList2.records %}
+{% set displayColumn = builderList2.displayColumn %}
+{% set noRecordsMessage = builderList2.noRecordsMessage %}
+{% set detailsPage = builderList2.detailsPage %}
+{% set detailsKeyColumn = builderList2.detailsKeyColumn %}
+{% set detailsUrlParameter = builderList2.detailsUrlParameter %}
+
+
 <div id="space-navbar-fixed"class="banner banner--home">
     <div class="container">
         <div class="row">
@@ -40,7 +58,7 @@ pageNumber = "{{ :page }}"
 <div class="container">
     <div class="row">
         <div class="wrapper">
-            {% content "expert.htm" %}
+            {% partial 'expert' %}
         </div>
     </div>
 </div>

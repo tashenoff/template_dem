@@ -26,6 +26,9 @@
 
     }
 
+
+
+
     &__content {
         padding: $gutters;
         margin: 0 0 $gutters 0;
@@ -39,6 +42,10 @@
             margin: 40px 18px;
             line-height: 1.5rem;
             // font-size: 20px;
+        }
+
+        &--bordernone {
+            border: transparent;
         }
 
 

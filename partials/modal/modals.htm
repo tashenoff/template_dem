@@ -7,17 +7,26 @@
             return;
         }
     });
+
+    $(".modal2").fancybox({
+        afterClose: function () {
+            location.reload();
+            return;
+        }
+    });
+
 </script>
 
 <div id="modal-img" class="modal modal--fade">
-    <form  id="modals" name="modall" onsubmit="return validateForm()" data-request="{{ genericForm }}::onFormSubmit" class="modal">
+    <form id="modals" name="modall" onsubmit="return validateForm()" data-request="{{ genericForm }}::onFormSubmit"
+          class="modal">
         {{ form_token() }}
         <div id="{{ genericForm }}_forms_flash"></div>
-        <input  type="hidden" name="pagename" value=" {{ record.name }}">
+        <input type="hidden" name="pagename" value=" {{ record.name }}">
 
         <input type="hidden" name="price" id="input-price" value="" required>
         <label class="modal__field" for="fname">Ваше имя</label>
-        <input  class="modal__field" type="text" required id="name" name="name" placeholder="Нурсултан">
+        <input class="modal__field" type="text" required id="name" name="name" placeholder="Нурсултан">
         <label class="modal__label">Размер:</label>
 
         <select class="modal__select" id="department" required name="Размер">
@@ -42,16 +51,31 @@
 
     </form>
 
-    <div id="modal-img" class="modal modal--fade">
-        <div class="modal__dialog modal__dialog--img">
-            <div class="modal__content">
-                <div class="block__header">
-                    <div onclick="closeFunction();" class="btn close">x</div>
-                </div>
-                <div class="modal__body">
 
-                    <img class="modal-content" id="img01">
-                </div>
-            </div>
+</div>
 
-        </div>
+
+
+<div id="modal-img" class="modal modal--fade">
+    <form id="modals2" name="modall" onsubmit="return validateForm()" data-request="{{ genericForm }}::onFormSubmit"
+          class="modal2">
+        {{ form_token() }}
+        <div id="{{ genericForm }}_forms_flash"></div>
+        <input type="hidden" name="pagename" value=" {{ record.name }}">
+
+        <label class="modal__field">Ваше имя</label>
+        <input class="modal__field" type="text" required id="name" name="name" placeholder="Нурсултан">
+
+
+        <label class="modal__field">Номер телефона</label>
+        <input type="text" required id="phone" name="phone" placeholder="+7 (__)___ __ __">
+
+        <button id="simpleContactSubmitButton" class="btn btn-primary">Отправить</button>
+    </form>
+
+</div>
+
+
+
+
+

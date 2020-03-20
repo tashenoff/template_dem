@@ -9,6 +9,18 @@ identifierValue = "{{ :id }}"
 modelKeyColumn = "id"
 displayColumn = "label"
 notFoundMessage = "Record not found"
+
+[genericForm]
+rules[name] = "required"
+rules[phone] = "required"
+messages_success = "Your form was successfully submitted"
+messages_errors = "There were errors with your submission"
+inline_errors = "disabled"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
 ==
 {% set record = builderDetails.record %}
 {% set displayColumn = builderDetails.displayColumn %}
@@ -25,6 +37,9 @@ notFoundMessage = "Record not found"
                 </div>
 
                 <button onclick="openFunction();" class="btn btn-outline"> бесплатная консультация специалиста</button>
+
+                <div data-fancybox="modals2" data-src="#modals2" href="javascript:;" class="btn btn-primary">Заказать</div>
+
 
             </div>
 
@@ -63,6 +78,7 @@ notFoundMessage = "Record not found"
                         {{landpro.descpro |raw }}
                         <div class="land__footer">
                             <a class="btn btn-primary" href="{{landpro.linkpro }}">Подробнее</a>
+
                         </div>
 
                     </div>
@@ -72,3 +88,11 @@ notFoundMessage = "Record not found"
     {% endfor %}
 
 </div>
+
+
+
+
+
+
+
+

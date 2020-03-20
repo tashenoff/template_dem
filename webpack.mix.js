@@ -14,7 +14,7 @@ mix.setPublicPath("./assets/");
 mix.sass("./assets/sass/app.scss", "dist/css").version();
 
 mix.browserSync({
-  proxy: "localhost/dem",
+  proxy: "localhost:8888/dem",
   //   notify: false,
   files: ["./*/**/*.css", "./**/*.htm", "./assets/js/*.js"]
 });

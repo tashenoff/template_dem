@@ -1622,6 +1622,13 @@ body h1 {
   color: #fff;
 }
 
+.marketing__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
 .marketing-container {
   min-height: 300px;
   display: flex;

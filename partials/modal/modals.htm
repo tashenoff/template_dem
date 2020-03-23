@@ -15,6 +15,11 @@
         }
     });
 
+    $(document).ready(function () {
+        $(".reset-btn").click(function () {
+            $("#modals").trigger("reset");
+        });
+    });
 </script>
 
 <div id="modal-img" class="modal modal--fade">
@@ -46,26 +51,7 @@
         <p class="modal__price">Итоговая цена: <span id="department-price">0</span></p>
         <div class="modal__footer">
             <button type="submit" id="simpleContactSubmitButton" class="btn btn-primary">Отправить</button>
-    </form>
-</div>
 
-
-<div id="modal-img" class="modal modal--fade">
-    <form id="modals2" name="modall" onsubmit="return validateForm()" data-request="{{ genericForm }}::onFormSubmit"
-          class="modal2">
-        {{ form_token() }}
-        <div id="{{ genericForm }}_forms_flash"></div>
-        <input type="hidden" name="pagename" value=" {{ record.name }}">
-
-        <label class="modal__field">Ваше имя</label>
-        <input class="modal__field" type="text" required id="name" name="name" placeholder="Нурсултан">
-
-
-        <label class="modal__field">Номер телефона</label>
-        <input type="text" required id="phone" name="phone" placeholder="+7 (__)___ __ __">
-
-        <button type="submit" id="simpleContactSubmitButton" class="btn btn-primary">Отправить</button>
-    </form>
-
-</div>
-
+            <button type="button" class="reset-btn">Очистить форму</button>
+        </form>
+    </div>

@@ -10,11 +10,13 @@ modelKeyColumn = "id"
 displayColumn = "label"
 notFoundMessage = "Record not found"
 
-genericForm genericForm2]
+[genericForm genericForm2]
 rules[name] = "required"
 rules[phone] = "required"
 messages_success = "Your form was successfully submitted"
 messages_errors = "There were errors with your submission"
+messages_partial = "flash/flash2.htm"
+reset_form = 1
 inline_errors = "disabled"
 sanitize_data = "disabled"
 anonymize_ip = "disabled"
@@ -36,10 +38,7 @@ recaptcha_size = "normal"
 
                 </div>
 
-                <button onclick="openFunction();" class="btn btn-outline"> бесплатная консультация специалиста</button>
-
-                <div data-fancybox="modals2" data-src="#modals2" href="javascript:;" class="btn btn-primary">Заказать</div>
-
+                <div data-fancybox="modals2" data-src="#modals2" href="javascript:;" class="btn btn-outline">Заказать</div>
 
             </div>
 
@@ -88,4 +87,3 @@ recaptcha_size = "normal"
     {% endfor %}
 
 </div>
-

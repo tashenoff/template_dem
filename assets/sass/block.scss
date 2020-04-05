@@ -130,6 +130,8 @@
         @include mq(max $BP-mobile) {
             position: relative;
             margin-top: -95px;
+            height: 60vh;
+            border: 1px solid rgba(107, 166, 234, 0.3);
         }
 
 

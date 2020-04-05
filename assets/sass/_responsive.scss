@@ -45,6 +45,11 @@
   }
 }
 
+.col-6-m{
+  @include mq(max $BP-mobile) {
+    width: 50%;
+  }
+}
 
 
 .col-2 {

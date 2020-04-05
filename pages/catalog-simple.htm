@@ -78,14 +78,14 @@ recaptcha_size = "normal"
                         <div class="block__content block__content--bordernone block__content--ul-margin-none">
                             <p class="block__title">Размер</p>
                             <div class="row ">
-                                <div class="col col-6 block__size">Размер (см)</div>
-                                <div class="col col-6 block__size">цена (₸)</div>
+                                <div class="col col-6 col-6-m block__size">Размер (см)</div>
+                                <div class="col col-6 col-6-m block__size">цена (₸)</div>
                             </div>
 
                             <div class="row">
                                 {% for size in record.size %}
-                                    <div class="col col-6">{{size.size_product }}</div>
-                                    <div class="col col-6">{{size.price_product }}</div>
+                                    <div class="col col-6 col-6-m">{{size.size_product }}</div>
+                                    <div class="col col-6 col-6-m">{{size.price_product }}</div>
 
                                 {% endfor %}
                             </div>

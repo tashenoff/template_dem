@@ -1627,6 +1627,7 @@ body h1 {
   flex-direction: column;
   justify-content: center;
   height: 100%;
+  padding-bottom: 20px;
 }
 
 .marketing-container {
@@ -2298,7 +2299,8 @@ body h1 {
 
 .banner--bottom {
   color: #6ba6ea;
-  height: 60vh;
+  height: 100vh;
+  max-height: 540px;
 }
 
 .banner--about {
@@ -2359,6 +2361,18 @@ body h1 {
     padding: 16px 0;
     font-size: 18px;
     line-height: 28.8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .mob-order {
+    order: -1;
+  }
+}
+
+@media (max-width: 600px) {
+  w-100 {
+    max-width: 100%;
   }
 }
 

@@ -72,7 +72,8 @@
 
   &--bottom {
     color: $primary;
-    height: 60vh;
+    height: 100vh;
+    max-height: 540px;
   }
 
   &--about {
@@ -132,5 +133,18 @@
         line-height: $base-line-height * 1.2;
       }
     }
+  }
+}
+
+.mob-order{
+  @include mq(max $BP-mobile) {
+    order: -1
+  }
+}
+
+
+w-100{
+  @include mq(max $BP-mobile) {
+    max-width: 100%;
   }
 }

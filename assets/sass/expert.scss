@@ -101,6 +101,7 @@
 
     @include mq(max $BP-mobile) {
         bottom: 10%;
+        top: 30%;
 
     }
 }
@@ -114,6 +115,10 @@
     right: 52px;
     display: block !important;
     border: 0px solid black;
+    @include mq(max $BP-mobile) {
+        top: 30%;
+
+    }
 }
 
 

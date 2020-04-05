@@ -1661,6 +1661,7 @@ body h1 {
   right: 16px;
   top: 10px;
   display: none !important;
+  width: 60px;
 }
 
 @media (max-width: 600px) {
@@ -1980,6 +1981,7 @@ body h1 {
 @media (max-width: 600px) {
   .title {
     line-height: 36px;
+    padding: 16px 0;
   }
 }
 
@@ -2076,6 +2078,7 @@ body h1 {
 @media (max-width: 600px) {
   .owl-prev {
     bottom: 10%;
+    top: 30%;
   }
 }
 
@@ -2087,6 +2090,12 @@ body h1 {
   right: 52px;
   display: block !important;
   border: 0px solid black;
+}
+
+@media (max-width: 600px) {
+  .owl-next {
+    top: 30%;
+  }
 }
 
 .owl-theme .owl-nav [class*=owl-]:hover {

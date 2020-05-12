@@ -1436,6 +1436,8 @@ footer svg {
 
 .footer__right span {
   margin-right: 20px;
+  width: 125px;
+  display: block;
 }
 
 .footer__right svg {

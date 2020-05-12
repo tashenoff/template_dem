@@ -1138,7 +1138,7 @@
 
 @media (max-width: 600px) {
   .col-2 {
-    width: 50%;
+    width: 20%;
   }
 }
 
@@ -1149,7 +1149,7 @@
 
 @media (max-width: 600px) {
   .col-10 {
-    width: 50%;
+    width: 80%;
   }
 }
 
@@ -1169,7 +1169,7 @@
 
 @media (max-width: 600px) {
   .col-7 {
-    width: 100%;
+    width: 70%;
   }
 }
 
@@ -1179,7 +1179,7 @@
 
 @media (max-width: 600px) {
   .col-3 {
-    width: 100%;
+    width: 30%;
   }
 }
 

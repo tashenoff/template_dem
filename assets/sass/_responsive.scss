@@ -64,7 +64,7 @@
 
 
   @include mq(max $BP-mobile) {
-    width: 50%;
+    width: 20%;
   }
 }
 
@@ -79,7 +79,7 @@
 
 
   @include mq(max $BP-mobile) {
-    width: 50%;
+    width: 80%;
   }
 }
 
@@ -96,7 +96,7 @@
   width: 75%;
 
   @include mq(max $BP-mobile) {
-    width: 100%;
+    width: 70%;
   }
 }
 
@@ -104,7 +104,7 @@
   width: 25%;
 
   @include mq(max $BP-mobile) {
-    width: 100%;
+    width: 30%;
   }
 }
 

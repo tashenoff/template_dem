@@ -2079,13 +2079,18 @@ body h1 {
   position: absolute;
   top: calc(50% - 50px);
   display: block !important;
-  border: 0px solid black;
 }
 
 @media (max-width: 600px) {
   .owl-prev {
     bottom: 10%;
-    top: 30%;
+    top: 23%;
+    left: 8%;
+  }
+
+  .owl-prev img {
+    width: 40px;
+    display: block;
   }
 }
 
@@ -2101,7 +2106,14 @@ body h1 {
 
 @media (max-width: 600px) {
   .owl-next {
-    top: 30%;
+    bottom: 10%;
+    top: 23%;
+    right: 15%;
+  }
+
+  .owl-next img {
+    width: 40px;
+    display: block;
   }
 }
 

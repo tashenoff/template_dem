@@ -96,12 +96,20 @@
     position: absolute;
     top: calc(50% - 50px);
     display: block !important;
-    border: 0px solid black;
+
+
 
 
     @include mq(max $BP-mobile) {
         bottom: 10%;
-        top: 30%;
+        top: 23%;
+        left: 8%;
+
+        img{
+            width: 40px;
+            display: block;
+        }
+
 
     }
 }
@@ -116,7 +124,14 @@
     display: block !important;
     border: 0px solid black;
     @include mq(max $BP-mobile) {
-        top: 30%;
+        bottom: 10%;
+        top: 23%;
+        right: 15%;
+
+        img{
+            width: 40px;
+            display: block;
+        }
 
     }
 }

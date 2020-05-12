@@ -8,8 +8,8 @@ $(document).ready(function() {
     margin: 10,
     nav: true,
     navText: [
-      "<img src='./themes/dem/assets/img/arrow_left.svg'>",
-      "<img src='./themes/dem/assets/img/arrow_right.svg'>"
+      "<img src='http://skincareshop.kz/themes/dem/assets/img/arrow_left.svg'>",
+      "<img src='http://skincareshop.kz/themes/dem/assets/img/arrow_right.svg'>"
     ],
     dots: false,
     responsive: {

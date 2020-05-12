@@ -1,17 +1,19 @@
+.land_img{
+    width: 100%;
+    display: block;
+}
 .land {
     display: flex;
     border: 1px solid rgba(128, 128, 128, 0.2);
     margin: $gutters;
     width: 100%;
 
-    img{
-        width: 100%;
-        display: block;
-    }
 
     @include mq(max $BP-mobile) {
         flex-direction: column;
     }
+
+
 
 
 

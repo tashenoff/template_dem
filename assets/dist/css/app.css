@@ -2551,6 +2551,11 @@ form p {
   width: 24px;
 }
 
+.land_img {
+  width: 100%;
+  display: block;
+}
+
 .land {
   display: flex;
   border: 1px solid rgba(128, 128, 128, 0.2);

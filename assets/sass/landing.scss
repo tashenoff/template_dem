@@ -4,6 +4,11 @@
     margin: $gutters;
     width: 100%;
 
+    img{
+        width: 100%;
+        display: block;
+    }
+
     @include mq(max $BP-mobile) {
         flex-direction: column;
     }

@@ -1173,6 +1173,16 @@
   }
 }
 
+.col-4f {
+  width: 25%;
+}
+
+@media (max-width: 600px) {
+  .col-4f {
+    width: 100%;
+  }
+}
+
 .col-3 {
   width: 25%;
 }
